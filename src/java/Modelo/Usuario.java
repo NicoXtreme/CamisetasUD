@@ -9,12 +9,12 @@ public class Usuario {
     String nombre;
     String correo;
     String contraseña;
-    boolean tipo;
+    String tipo;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String correo, String contraseña, boolean tipo) {
+    public Usuario(int id, String nombre, String correo, String contraseña, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
@@ -56,14 +56,12 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public boolean isTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(boolean tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    
-    
     
 }

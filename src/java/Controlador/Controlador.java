@@ -33,6 +33,9 @@ public class Controlador extends HttpServlet {
                 case "Principal":
                     request.getRequestDispatcher("Principal.jsp").forward(request, response);
                     break;
+                case "Register":
+                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
+                    break;
                 default:
                     throw new AssertionError();
             }

@@ -32,4 +32,27 @@ public class UsuarioDAO {
         }
         return usr;
     }
+    
+    public Usuario registrar(String username, String mail, String password, String type){
+        Usuario usr = new Usuario();
+        String comsql = "INSERT INTO usuario (nombreusuario, correousuario, contrasenausuario, tipousuario) values(?,?,?,?)";
+        try {
+            con = cn.Conexion();
+            ps=con.prepareStatement(comsql);
+            ps.setString(1, username);
+            ps.setString(2, mail);
+            ps.setString(3, password);
+            ps.setString(4, type);
+            
+            int x = ps.executeUpdate();
+            if(x>0){
+                System.out.println("Registro exitoso");
+            } else {
+                System.out.println("Algo salio mal");
+            }
+        } catch (Exception e) {
+        }
+        return usr;
+    }
+    
 }

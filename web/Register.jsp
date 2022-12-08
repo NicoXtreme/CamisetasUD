@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 3 dic. 2022, 14:46:20
+    Document   : Register
+    Created on : 8 dic. 2022, 08:45:14
     Author     : nicox
 --%>
 
@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/theme.css" type="text/css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
@@ -41,17 +41,34 @@
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center" style="background-image: url(&quot;https://static.pingendo.com/cover-bubble-dark.svg&quot;); background-size: cover;">
+  <div class="py-5 text-center" style="">
     <div class="container">
-      <div class="row">
-        <div class="mx-auto col-md-6 col-10 bg-white p-5">
-          <h1 class="mb-4">Inicia Sesión</h1>
-          <form action="Validar" method="POST">
-            <div class="form-group"> <input type="email" name="txtusermail" class="form-control" placeholder="Usuario" id="form9"> </div>
-            <div class="form-group mb-3"> <input type="password" name="txtpass" class="form-control" placeholder="Contraseña" id="form10"> <small class="form-text text-muted text-right">
-              </small> </div> <button type="submit" name="accion" value="ingresar" class="btn btn-primary">Iniciar Sesión</button>
-          </form><a href="Register.jsp"> ¿No tienes una cuenta? Registrate</a>
+      <div class="row" style="">
+        <div class="mx-auto col-lg-6 col-10">
+          <h1>Registrate!</h1>
+          <p class="mb-3">Que honor que te registres en nuestra página, no olvides elegir el tipo de usuario, y seleccionar una contraseña segura.</p>
+          <form class="text-left">
+            <div class="form-group"> <label for="form16">Tu nombre de usuario</label> <input type="text" name="username" class="form-control" id="form16" placeholder="Tu nombre"> </div>
+            <div class="form-group"> <label for="form18">Tu correo electronico</label> <input type="email" name="usermail" class="form-control" id="form18" placeholder="correo@camiud.com"> </div>
+            <div class="form-row">
+                <div class="form-group col-md-6"> <label for="form19">Password</label> <input type="password" name="pass" class="form-control" id="form19" placeholder="••••"> </div>
+                <div class="form-group col-md-6"> <label for="form20">Confirm Password</label> <input type="password" name="confirm" class="form-control" id="form20" placeholder="••••"> </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 justify-content-start d-flex flex-column">
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radio1" name="type" value="cliente">Cliente - Accede al sitio y compra camisetas estampadas<label class="form-check-label" for="radio1"></label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radio2" name="type" value="artista">Artista - Podrás subir tus propias estampas <label class="form-check-label" for="radio2"></label>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12"><button type="submit" name="accion" value="registrar" class="btn btn-primary mt-3">Registrate</button></div>
       </div>
     </div>
   </div>
@@ -82,7 +99,7 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 

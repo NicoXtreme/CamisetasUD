@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
@@ -84,6 +84,19 @@ public class Validar extends HttpServlet {
                 request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        }
+        if(accion.equalsIgnoreCase("Registrar")){
+            String username = request.getParameter("username");
+            String usermail = request.getParameter("usermail");
+            String pass = request.getParameter("pass");
+            String type = request.getParameter("type");
+            
+            usr = udao.registrar(username, usermail, pass, type);
+            if(usr.getNombre()!= null){
+                request.getRequestDispatcher("Controlador?accion=Register");
+            }else{
+                request.getRequestDispatcher("Register.jsp").forward(request, response);
             }
         }
         else{
