@@ -1,4 +1,4 @@
-    /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author nicox
+ * @author NicoXtreme
  */
-public class Validar extends HttpServlet {
+public class Registrar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,10 +40,10 @@ public class Validar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Validar</title>");            
+            out.println("<title>Servlet Registrar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Validar at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Registrar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,21 +75,18 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String accion = request.getParameter("accion");
         
-        if(accion.equalsIgnoreCase("Ingresar")){
+        if(accion.equalsIgnoreCase("Registrar")){
+            String username = request.getParameter("txtusername");
             String usermail = request.getParameter("txtusermail");
             String pass = request.getParameter("txtpass");
-            usr = udao.validar(usermail, pass);
-            if(usr.getCorreo()!=null){
-                request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
-            }else{
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+            
+            if(udao.registrar(username, usermail, pass)){
+                response.sendRedirect("index.jsp");
+            } else{
+                response.sendRedirect("Register.jsp");
             }
-        }
-        else{
-            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 

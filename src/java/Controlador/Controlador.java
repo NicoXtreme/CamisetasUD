@@ -5,7 +5,6 @@
 package Controlador;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,10 +31,7 @@ public class Controlador extends HttpServlet {
             switch (accion) {
                 case "Principal":
                     request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;
-                case "Register":
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;
+                    break;                
                 default:
                     throw new AssertionError();
             }

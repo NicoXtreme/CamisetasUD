@@ -47,29 +47,19 @@
         <div class="mx-auto col-lg-6 col-10">
           <h1>Registrate!</h1>
           <p class="mb-3">Que honor que te registres en nuestra página, no olvides elegir el tipo de usuario, y seleccionar una contraseña segura.</p>
-          <form class="text-left">
-            <div class="form-group"> <label for="form16">Tu nombre de usuario</label> <input type="text" name="username" class="form-control" id="form16" placeholder="Tu nombre"> </div>
-            <div class="form-group"> <label for="form18">Tu correo electronico</label> <input type="email" name="usermail" class="form-control" id="form18" placeholder="correo@camiud.com"> </div>
+          <form class="text-left" action="Registrar" method="POST">
+            <div class="form-group"> <label for="form16">Tu nombre de usuario</label> <input type="text" name="txtusername" class="form-control" id="form16" placeholder="Tu nombre"> </div>
+            <div class="form-group"> <label for="form18">Tu correo electronico</label> <input type="email" name="txtusermail" class="form-control" id="form18" placeholder="correo@camiud.com"> </div>
             <div class="form-row">
-                <div class="form-group col-md-6"> <label for="form19">Password</label> <input type="password" name="pass" class="form-control" id="form19" placeholder="••••"> </div>
-                <div class="form-group col-md-6"> <label for="form20">Confirm Password</label> <input type="password" name="confirm" class="form-control" id="form20" placeholder="••••"> </div>
+                <div class="form-group col-md-6"> <label for="form19">Password</label> <input type="password" name="txtpass" class="form-control" id="form19" placeholder="••••"> </div>
             </div>
             <div class="row">
-              <div class="col-md-12 justify-content-start d-flex flex-column">
-                <div class="form-check">
-                  <input type="radio" class="form-check-input" id="radio1" name="type" value="cliente">Cliente - Accede al sitio y compra camisetas estampadas<label class="form-check-label" for="radio1"></label>
-                </div>
-                <div class="form-check">
-                  <input type="radio" class="form-check-input" id="radio2" name="type" value="artista">Artista - Podrás subir tus propias estampas <label class="form-check-label" for="radio2"></label>
-                </div>
-              </div>
+                <div class="col-md-12"><button type="submit" name="accion" value="registrar" class="btn btn-primary mt-3">Registrate</button></div>
             </div>
           </form>
         </div>
       </div>
-      <div class="row">
-          <div class="col-md-12"><button type="submit" name="accion" value="registrar" class="btn btn-primary mt-3">Registrate</button></div>
-      </div>
+      
     </div>
   </div>
   <div class="py-3 bg-secondary text-light">
