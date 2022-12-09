@@ -34,15 +34,15 @@ public class UsuarioDAO {
         return usr;
     }
     
-    public boolean registrar(String username, String usermail, String password){
-        Usuario usr = new Usuario();
-        String comsql = "INSERT INTO usuarios (nombreusuario, correousuario, contrasenausuario) values (?,?,?)";
+    public boolean registrar(String username, String usermail, String password, String type){
+        String comsql = "INSERT INTO usuarios (nombreusuario, correousuario, contrasenausuario, tipousuario) values (?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(comsql);
             ps.setString(1, username);
             ps.setString(2, usermail);
             ps.setString(3, password);
+            ps.setString(4, type);
             
             return ps.executeUpdate() > 0;
           

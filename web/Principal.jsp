@@ -25,13 +25,13 @@
           <b> CAMISETAS UD</b>
         </a>
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="#">INICIO</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="Principal.jsp">INICIO</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#">SUBE TU ESTAMPAS</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#">PERSONALIZA TU CAMISETA</a> </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="#">Iniciar Sesión</a> </li>
-          <li class="nav-item text-light"> <a class="nav-link text-light" href="#">Registrate</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="index.jsp">Iniciar Sesión</a> </li>
+          <li class="nav-item text-light"> <a class="nav-link text-light" href="Register.jsp">Registrate</a> </li>
         </ul>
       </div>
     </div>
@@ -117,8 +117,8 @@
       <div class="row">
         <div class="col-md-12 text-center d-md-flex align-items-center"> <i class="d-block fa fa-stop-circle fa-2x mr-md-5 text-primary"></i>
           <ul class="nav mx-md-auto d-flex justify-content-center">
-            <li class="nav-item"> <a class="nav-link active text-light" href="#">Pagina Principal</a> </li>
-            <li class="nav-item"> <a class="nav-link text-light" href="#">Sobre Nosotros</a> </li>
+            <li class="nav-item"> <a class="nav-link active text-light" href="Principal.jsp">Pagina Principal</a> </li>
+            <li class="nav-item"> <a class="nav-link text-light" href="SobreNosotros.jsp">Sobre Nosotros</a> </li>
           </ul>
           <div class="row">
             <div class="col-md-12 d-flex align-items-center justify-content-md-between justify-content-center my-2"> <a href="#">

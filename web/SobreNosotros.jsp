@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : 3 dic. 2022, 14:46:20
-    Author     : nicox
+    Document   : SobreNosotros
+    Created on : 8 dic. 2022, 22:35:36
+    Author     : NicoXtreme
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/theme.css" type="text/css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
@@ -41,16 +41,13 @@
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center" style="background-image: url(&quot;https://static.pingendo.com/cover-bubble-dark.svg&quot;); background-size: cover;">
-    <div class="container">
+  <div class="py-5 text-center text-white" style="position: relative; overflow: hidden;"> <video autoplay="" loop="" muted="" plays-inline="" style="position: absolute; right: 0; top: 0; min-width:100%; z-index: -100;">
+      <source src="https://static.pingendo.com/video-placeholder.mp4" type="video/mp4"> </video>
+    <div class="container py-5">
       <div class="row">
-        <div class="mx-auto col-md-6 col-10 bg-white p-5">
-          <h1 class="mb-4">Inicia Sesión</h1>
-          <form action="Validar" method="POST">
-            <div class="form-group"> <input type="email" name="txtusermail" class="form-control" placeholder="Usuario" id="form9"> </div>
-            <div class="form-group mb-3"> <input type="password" name="txtpass" class="form-control" placeholder="Contraseña" id="form10"> <small class="form-text text-muted text-right">
-              </small> </div> <button type="submit" name="accion" value="ingresar" class="btn btn-primary">Iniciar Sesión</button>
-          </form><a href="Register.jsp"> ¿No tienes una cuenta? Registrate</a>
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 class="mb-4 display-3">Sobre Nosotros</h1>
+          <p class="lead mb-5">Somos Camisetas UD, nuestro objetivo es que puedas comprar las mejores camisetas en la web, tambien si eres un artista estaremos encantados de que subas tus estampas y puedas venderlas en camisetas dentro del sitio.</p>
         </div>
       </div>
     </div>
@@ -82,7 +79,7 @@
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 

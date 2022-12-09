@@ -81,9 +81,10 @@ public class Registrar extends HttpServlet {
             String username = request.getParameter("txtusername");
             String usermail = request.getParameter("txtusermail");
             String pass = request.getParameter("txtpass");
+            String type = request.getParameter("type");
             
-            if(udao.registrar(username, usermail, pass)){
-                response.sendRedirect("index.jsp");
+            if(udao.registrar(username, usermail, pass, type)){
+                response.sendRedirect("RegisterSuccess.jsp");
             } else{
                 response.sendRedirect("Register.jsp");
             }
