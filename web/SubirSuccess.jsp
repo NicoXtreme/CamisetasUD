@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Register
-    Created on : 8 dic. 2022, 08:45:14
-    Author     : nicox
+    Document   : SubirSuccess
+    Created on : 13 dic. 2022, 16:23:12
+    Author     : NicoXtreme
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +13,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="theme.css">
 </head>
 
 <body>
@@ -42,29 +41,15 @@
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center" style="">
+  <div class="py-5 text-center text-md-right h-75" style="background-image: url(&quot;https://static.pingendo.com/cover-bubble-dark.svg&quot;); background-position: right bottom; background-size: cover; background-repeat: repeat; background-attachment: fixed;">
     <div class="container">
-      <div class="row" style="">
-        <div class="mx-auto col-lg-6 col-10">
-          <h1>Registrate!</h1>
-          <p class="mb-3">Que honor que te registres en nuestra página, no olvides elegir el tipo de usuario, y seleccionar una contraseña segura.</p>
-          <form class="text-left" action="Registrar" method="POST">
-            <div class="form-group"> <label for="form16">Tu nombre de usuario</label> <input type="text" name="txtusername" class="form-control" id="form16" placeholder="Tu nombre de usuario"> </div>
-            <div class="form-group"> <label for="form18">Tu correo electronico</label> <input type="email" name="txtusermail" class="form-control" id="form18" placeholder="correo@camiud.com"> </div>
-            <div class="form-row">
-              <div class="form-group col-md-6"> <label for="form19" contenteditable="true">Contraseña</label> <input type="password" name="txtpass" class="form-control" id="form19" placeholder="••••"> </div>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio1" name="type" value="cliente">Cliente - Accede al sitio y compra camisetas estampadas. <label class="form-check-label" for="radio1"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio2" name="type" value="artista">Artista - Sube tus estampas, dependiendo del stock que tengas. <label class="form-check-label" for="radio2"></label>
-            </div>
-            <div class="form-group"> <label for="form16">Tu cedula</label> <input type="text" name="txtdocument" class="form-control" id="form16" placeholder="Tu cedula"> </div>
-            <div class="form-group"> <label for="form16">Tu nombre completo</label> <input type="text" name="txtname" class="form-control" id="form16" placeholder="Tu nombre completo"> </div>
-            <div class="form-group"> <label for="form16">Tus apellidos</label> <input type="text" name="txtforename" class="form-control" id="form16" placeholder="Tus apellidos"> </div>
-            <div class="row">
-              <div class="col-md-12"><button type="submit" name="accion" value="registrar" class="btn btn-primary mt-3">Registrate</button></div>
+      <div class="row">
+        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-10 col-md-9">
+          <h3 class="display-3">Felicidades!</h3>
+          <p class="mb-3 lead">Has subido tu producto exitosamente en Camisetas UD</p>
+          <form class="form-inline d-flex justify-content-end">
+            <div class="input-group">
+                <div class="input-group-append"> <button class="btn btn-primary" type="button" role="link" onclick="window.location='index.jsp'">Inicia Sesión</button> </div>
             </div>
           </form>
         </div>

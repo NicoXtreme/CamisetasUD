@@ -94,7 +94,7 @@ public class Validar extends HttpServlet {
     }
 
     /**
-     * Returns a short description of the servlet.
+     * Returns a short description of the servlet.d
      *
      * @return a String containing servlet description
      */

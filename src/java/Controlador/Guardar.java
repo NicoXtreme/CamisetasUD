@@ -4,20 +4,24 @@
  */
 package Controlador;
 
-import Modelo.Usuario;
-import ModeloDAO.UsuarioDAO;
+import Modelo.Camiseta;
+import ModeloDAO.CamisetaDAO;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  *
  * @author NicoXtreme
  */
-public class Registrar extends HttpServlet {
+@MultipartConfig
+public class Guardar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,8 +33,8 @@ public class Registrar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    UsuarioDAO udao = new UsuarioDAO();
-    Usuario usr = new Usuario();
+    CamisetaDAO camdao = new CamisetaDAO();
+    Camiseta cam = new Camiseta();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,10 +44,10 @@ public class Registrar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Registrar</title>");            
+            out.println("<title>Servlet Guardar</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Registrar at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Guardar at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,22 +80,34 @@ public class Registrar extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String accion = request.getParameter("accion");
-        
-        if(accion.equalsIgnoreCase("Registrar")){
-            String username = request.getParameter("txtusername");
-            String usermail = request.getParameter("txtusermail");
-            String pass = request.getParameter("txtpass");
-            String type = request.getParameter("type");
-            String document = request.getParameter("txtdocument");
-            String name = request.getParameter("txtname");
-            String forename = request.getParameter("txtforename");
-            
-            if(udao.registrar(username, usermail, pass, type, document, name, forename)){
-                response.sendRedirect("RegisterSuccess.jsp");
-            } else{
-                response.sendRedirect("Register.jsp");
+        switch (accion) {
+                case "guardar":
+                    Part part = request.getPart("filefoto");
+                    InputStream inputStream = part.getInputStream();
+                    
+                    String shirtname = request.getParameter("txtshirtname");
+                    String shirtdesc = request.getParameter("txtshirtdec");
+                    int shirtprice = Integer.parseInt(request.getParameter("shirtprice"));
+                    int shirtstock = Integer.parseInt(request.getParameter("txtshirtstock"));
+                    String shirtcolor = request.getParameter("color");
+                    String shirtsize = request.getParameter("talla");
+                    String shirttag = request.getParameter("estilo");
+                    
+                    cam.setFotoCamiseta(inputStream);
+                    cam.setNombreCamiseta(shirtname);
+                    cam.setDescripcionCamiseta(shirtdesc);
+                    cam.setPrecioCamiseta(shirtprice);
+                    cam.setStockCamiseta(shirtstock);
+                    cam.setColorCamiseta(shirtcolor);
+                    cam.setTallaCamiseta(shirtsize);
+                    cam.setEtiquetaCamiseta(shirttag);
+                    
+                    camdao.agregar(cam);
+                    
+                    request.getRequestDispatcher("SubirSuccess.jsp");
+                    break;
+
             }
-        }
     }
 
     /**

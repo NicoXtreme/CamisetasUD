@@ -18,7 +18,7 @@ public class UsuarioDAO {
     
     public Usuario validar(String mail, String password){
         Usuario usr = new Usuario();
-        String comsql = "SELECT * FROM usuarios WHERE correousuario=? and contrasenausuario=?";
+        String comsql = "SELECT * FROM usuarios WHERE CorreoUsuario=? and ContrasenaUsuario=?";
         try {
             con=cn.Conexion();
             ps=con.prepareStatement(comsql);
@@ -26,16 +26,16 @@ public class UsuarioDAO {
             ps.setString(2, password);
             rs = ps.executeQuery();
             while(rs.next()){
-                usr.setCorreo(rs.getString("correousuario"));
-                usr.setContraseña(rs.getString("contrasenausuario"));
+                usr.setCorreo(rs.getString("CorreoUsuario"));
+                usr.setContraseña(rs.getString("ContrasenaUsuario"));
             }
         } catch (Exception e) {
         }
         return usr;
     }
     
-    public boolean registrar(String username, String usermail, String password, String type){
-        String comsql = "INSERT INTO usuarios (nombreusuario, correousuario, contrasenausuario, tipousuario) values (?,?,?,?)";
+    public boolean registrar(String username, String usermail, String password, String type, String document, String name, String forename){
+        String comsql = "INSERT INTO usuarios (ApodoUsuario, CorreoUsuario, ContrasenaUsuario, TipoUsuario, CedulaUsuario, NombresUsuario, ApellidosUsuario) values (?,?,?,?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(comsql);
@@ -43,6 +43,9 @@ public class UsuarioDAO {
             ps.setString(2, usermail);
             ps.setString(3, password);
             ps.setString(4, type);
+            ps.setString(5, document);
+            ps.setString(6, name);
+            ps.setString(7, forename);
             
             return ps.executeUpdate() > 0;
           

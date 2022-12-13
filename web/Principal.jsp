@@ -26,8 +26,7 @@
         </a>
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"> <a class="nav-link" href="Principal.jsp">INICIO</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">SUBE TU ESTAMPAS</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">PERSONALIZA TU CAMISETA</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="SubirCamiseta.jsp">SUBE TU CAMISETA</a> </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item"> <a class="nav-link" href="index.jsp">Iniciar Sesión</a> </li>
@@ -109,6 +108,18 @@
         <div class="col-lg-3 col-md-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-1.svg"> </div>
         <div class="col-lg-3 col-md-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-4.svg"> </div>
         <div class="col-lg-3 col-md-6 p-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center flex-grow-0">
+          <ul class="pagination">
+            <li class="page-item"> <a class="page-link" href="#"> <span>«</span></a> </li>
+            <li class="page-item active"> <a class="page-link" href="#">1</a> </li>
+            <li class="page-item"> <a class="page-link" href="#">2</a> </li>
+            <li class="page-item"> <a class="page-link" href="#">3</a> </li>
+            <li class="page-item"> <a class="page-link" href="#">4</a> </li>
+            <li class="page-item"> <a class="page-link" href="#"> <span>»</span></a> </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
