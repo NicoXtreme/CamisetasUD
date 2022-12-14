@@ -6,6 +6,7 @@ package ModeloDAO;
 
 import Modelo.Camiseta;
 import config.Conexion;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,24 +21,25 @@ public class CamisetaDAO {
     PreparedStatement ps;
     ResultSet rs;
     
-    public void agregar(Camiseta cam){
-        String comsql = "INSERT INTO camiseta (FotoCamiseta, NombreCamiseta, DescripcionCamiseta, PrecioCamiseta, ColorCamiseta, TallaCamiseta, Etiqueta, Stock) values (?,?,?,?,?,?,?,?)";
+    public boolean agregar(Camiseta cam){
+        String comsql = "INSERT INTO camiseta(FotoCamiseta, NombreCamiseta, DescripcionCamiseta, PrecioCamiseta, Stock, ColorCamiseta, TallaCamiseta, Etiqueta) values(?,?,?,?,?,?,?,?)";
         try {
             con = cn.Conexion();
             ps = con.prepareStatement(comsql);
-            ps.setBlob(1, cam.getFotoCamiseta());
-            ps.setString(2, cam.getNombreCamiseta());
-            ps.setString(3, cam.getDescripcionCamiseta());
-            ps.setInt(4, cam.getPrecioCamiseta());
-            ps.setInt(5, cam.getStockCamiseta());
-            ps.setString(6, cam.getColorCamiseta());
-            ps.setString(7, cam.getTallaCamiseta());
-            ps.setString(8, cam.getEtiquetaCamiseta());
+            ps.setBlob(1, cam.getFoto());
+            ps.setString(2, cam.getNombre());
+            ps.setString(3, cam.getDescripcion());
+            ps.setInt(4, cam.getPrecio());
+            ps.setInt(5, cam.getStock());
+            ps.setString(6, cam.getColor());
+            ps.setString(7, cam.getTalla());
+            ps.setString(8, cam.getEtiqueta());
             
-            
-            ps.executeUpdate();
+            return ps.executeUpdate() > 0;
             
         } catch (Exception e) {
         }
+        
+        return false;
     }
 }

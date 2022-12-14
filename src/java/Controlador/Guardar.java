@@ -79,34 +79,39 @@ public class Guardar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String accion = request.getParameter("accion");
-        switch (accion) {
-                case "guardar":
-                    Part part = request.getPart("filefoto");
-                    InputStream inputStream = part.getInputStream();
-                    
-                    String shirtname = request.getParameter("txtshirtname");
-                    String shirtdesc = request.getParameter("txtshirtdec");
-                    int shirtprice = Integer.parseInt(request.getParameter("shirtprice"));
-                    int shirtstock = Integer.parseInt(request.getParameter("txtshirtstock"));
-                    String shirtcolor = request.getParameter("color");
-                    String shirtsize = request.getParameter("talla");
-                    String shirttag = request.getParameter("estilo");
-                    
-                    cam.setFotoCamiseta(inputStream);
-                    cam.setNombreCamiseta(shirtname);
-                    cam.setDescripcionCamiseta(shirtdesc);
-                    cam.setPrecioCamiseta(shirtprice);
-                    cam.setStockCamiseta(shirtstock);
-                    cam.setColorCamiseta(shirtcolor);
-                    cam.setTallaCamiseta(shirtsize);
-                    cam.setEtiquetaCamiseta(shirttag);
-                    
-                    camdao.agregar(cam);
-                    
-                    request.getRequestDispatcher("SubirSuccess.jsp");
-                    break;
+            String accion = request.getParameter("accion");
+            
+            if(accion.equalsIgnoreCase("Guardar")){
+                Part part = request.getPart("fileFoto");
+                InputStream inputStream = part.getInputStream();
+                String nombre = request.getParameter("txtshirtname");
+                String descripcion = request.getParameter("txtshirtdesc");
+                int precio = Integer.parseInt(request.getParameter("txtshirtprice"));
+                int stock = Integer.parseInt(request.getParameter("txtshirtstock"));
+                String color = request.getParameter("color");
+                String talla = request.getParameter("size");
+                String etiqueta = request.getParameter("tag");
 
+                cam.setFoto(inputStream);
+                cam.setNombre(nombre);
+                cam.setDescripcion(descripcion);
+                cam.setPrecio(precio);
+                cam.setStock(stock);
+                cam.setColor(color);
+                cam.setTalla(talla);
+                cam.setEtiqueta(etiqueta);
+                
+                if(request.getParameter("txtshirtprice") == null || request.getParameter("txtshirtstock") == null){
+                    response.sendRedirect("SubirCamiseta.jsp");
+                }
+                
+                camdao.agregar(cam);
+                
+                if(camdao.agregar(cam)){
+                response.sendRedirect("SubirSuccess.jsp");
+                } else{
+                    response.sendRedirect("SubirCamiseta.jsp");
+                }
             }
     }
 

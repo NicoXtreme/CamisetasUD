@@ -13,6 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="theme.css">
 </head>
 
 <body>
@@ -35,67 +36,65 @@
       </div>
     </div>
   </nav>
-  <div class="py-5 text-center text-white" style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(&quot;https://static.pingendo.com/cover-bubble-dark.svg&quot;); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;">
-      <form class="container" action="Guardar" method="POST" enctype="multipart/form-data" >
+  <div class="py-5 text-center">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6 mx-auto">
-          <h1 class="mb-3">Sube tus Estampas</h1>
-          <p class="lead mb-0">Busca las estampas como archivo png desde tu computadora</p> <input type="file" name="filefoto" class="btn btn-primary m-3" href="#" style=""></input>
-          <div class="form-group"> <label for="form16">Nombre de tu camiseta</label> <input type="text" name="txtshirtname" class="form-control" id="form16" placeholder="Nombre de tu camiseta"> </div>
-          <div class="form-group"> <label for="form16">Descripción de tu camiseta</label> <input type="text" name="txtshirtdesc" class="form-control" id="form16" placeholder="Una breve descripción"> </div>
-          <div class="form-group"> <label for="form16">Precio de tu camiseta</label> <input type="number" name="txtshirtprice" class="form-control" id="form16" placeholder="000.00"> </div>
-          <div class="form-group"> <label for="form16">Stock</label> <input type="number" name="txtshirtstock" class="form-control" id="form16" placeholder="Stock disponible"> </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group"> <label for="form16">Color</label>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio1" name="color" value="blanca">Blanca <label class="form-check-label" for="radio1"></label>
+        <div class="mx-auto col-lg-6 col-10" style="">
+          <h1>Sube tus Estampas</h1>
+          <p class="mb-3">Busca las estampas como archivo png desde tu computadora.</p>
+          <form class="text-left" action="Guardar" method="POST" enctype="multipart/form-data">
+            <input type="file" name="fileFoto" class="btn btn-primary"></input>
+              <div class="form-group"> <label for="form16">Nombre de tu camiseta</label> <input type="text" name="txtshirtname" class="form-control" id="form16" placeholder="Nombre de tu camiseta"> </div>
+              <div class="form-group"> <label for="form17">Descripcion de tu camiseta</label> <input type="text" name="txtshirtdesc" class="form-control" id="form17" placeholder="Descripcion de tu camiseta"> </div>
+            <div class="form-group"> <label for="form17">Precio de tu camiseta</label> <input type="text" name="txtshirtprice" class="form-control" id="form17" placeholder="Precio de tu camiseta"> </div>
+            <div class="form-group"> <label for="form17">Stock</label> <input type="text" name="txtshirtstock" class="form-control" id="form17" placeholder="Stock"> </div>
+            <div class="form-group"> <label for="form17">Color</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="color" value="cliente">Blanca <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="color" value="cliente">Negra <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="color" value="cliente">Amarilla <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="color" value="cliente">Azul <label class="form-check-label"></label>
+              </div>
             </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio2" name="color" value="negra">Negra <label class="form-check-label" for="radio2"></label>
+            <div class="form-group"> <label for="form17">Talla</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="size" value="cliente">S <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="size" value="cliente">M <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="size" value="cliente">L <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="size" value="cliente">XL <label class="form-check-label"></label>
+              </div>
             </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio3" name="color" value="amarilla">Amarilla <label class="form-check-label" for="radio3"></label>
+            <div class="form-group"> <label for="form17">Estilo</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="tag" value="cliente">Arte <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="tag" value="cliente">Deportiva <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="tag" value="cliente">Videojuegos <label class="form-check-label"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="tag" value="cliente">Superheroes <label class="form-check-label"></label>
+              </div>
             </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio4" name="color" value="azul">Azul <label class="form-check-label" for="radio4"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio5" name="color" value="roja">Roja <label class="form-check-label" for="radio5"></label>
-            </div>
-          </div>
-          <div class="form-group"> <label for="form16">Talla</label>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio1" name="talla" value="S">S <label class="form-check-label" for="radio1"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio2" name="talla" value="M">M <label class="form-check-label" for="radio2"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio3" name="talla" value="L">L <label class="form-check-label" for="radio3"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio4" name="talla" value="XL">XL <label class="form-check-label" for="radio4"></label>
-            </div>
-          </div>
-          <div class="form-group"> <label for="form16">Estilo</label>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio1" name="estilo" value="arte">Arte <label class="form-check-label" for="radio1"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio2" name="estilo" value="deportiva">Deportiva <label class="form-check-label" for="radio2"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio3" name="estilo" value="videojuegos">Videojuegos <label class="form-check-label" for="radio3"></label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" id="radio4" name="estilo" value="superheroes">Superheroes <label class="form-check-label" for="radio4"></label>
-            </div>
-          </div>
-            <button type="submit" name="accion" value="guardar" class="btn btn-primary mt-3">Guardar</button>  
+            <button type="submit" name="accion" value="Guardar" class="btn btn-primary">Guardar</button>
+          </form>
         </div>
       </div>
-    </form>
+    </div>
   </div>
   <div class="py-3 bg-secondary text-light">
     <div class="container">

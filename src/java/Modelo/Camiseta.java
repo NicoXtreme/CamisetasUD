@@ -12,28 +12,28 @@ import java.io.InputStream;
  */
 public class Camiseta {
     int idCamiseta;
-    InputStream fotoCamiseta;
-    String nombreCamiseta;
-    String descripcionCamiseta;
-    int precioCamiseta;
-    String colorCamiseta;
-    String tallaCamiseta;
-    String etiquetaCamiseta;
-    int stockCamiseta;
+    InputStream foto;
+    String nombre;
+    String descripcion;
+    int precio = 0;
+    String color;
+    String talla;
+    String etiqueta;
+    int stock = 0;
 
     public Camiseta() {
     }
 
-    public Camiseta(int idCamiseta, InputStream fotoCamiseta, String nombreCamiseta, String descripcionCamiseta, int precioCamiseta, String colorCamiseta, String tallaCamiseta, String etiquetaCamiseta, int stockCamiseta) {
+    public Camiseta(int idCamiseta, InputStream foto, String nombre, String descripcion, int precio, String color, String talla, String etiqueta, int stock) {
         this.idCamiseta = idCamiseta;
-        this.fotoCamiseta = fotoCamiseta;
-        this.nombreCamiseta = nombreCamiseta;
-        this.descripcionCamiseta = descripcionCamiseta;
-        this.precioCamiseta = precioCamiseta;
-        this.colorCamiseta = colorCamiseta;
-        this.tallaCamiseta = tallaCamiseta;
-        this.etiquetaCamiseta = etiquetaCamiseta;
-        this.stockCamiseta = stockCamiseta;
+        this.foto = foto;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.color = color;
+        this.talla = talla;
+        this.etiqueta = etiqueta;
+        this.stock = stock;
     }
 
     public int getIdCamiseta() {
@@ -44,70 +44,70 @@ public class Camiseta {
         this.idCamiseta = idCamiseta;
     }
 
-    public InputStream getFotoCamiseta() {
-        return fotoCamiseta;
+    public InputStream getFoto() {
+        return foto;
     }
 
-    public void setFotoCamiseta(InputStream fotoCamiseta) {
-        this.fotoCamiseta = fotoCamiseta;
+    public void setFoto(InputStream foto) {
+        this.foto = foto;
     }
 
-    public String getNombreCamiseta() {
-        return nombreCamiseta;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCamiseta(String nombreCamiseta) {
-        this.nombreCamiseta = nombreCamiseta;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDescripcionCamiseta() {
-        return descripcionCamiseta;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcionCamiseta(String descripcionCamiseta) {
-        this.descripcionCamiseta = descripcionCamiseta;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public int getPrecioCamiseta() {
-        return precioCamiseta;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setPrecioCamiseta(int precioCamiseta) {
-        this.precioCamiseta = precioCamiseta;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
 
-    public String getColorCamiseta() {
-        return colorCamiseta;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorCamiseta(String colorCamiseta) {
-        this.colorCamiseta = colorCamiseta;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getTallaCamiseta() {
-        return tallaCamiseta;
+    public String getTalla() {
+        return talla;
     }
 
-    public void setTallaCamiseta(String tallaCamiseta) {
-        this.tallaCamiseta = tallaCamiseta;
+    public void setTalla(String talla) {
+        this.talla = talla;
     }
 
-    public String getEtiquetaCamiseta() {
-        return etiquetaCamiseta;
+    public String getEtiqueta() {
+        return etiqueta;
     }
 
-    public void setEtiquetaCamiseta(String etiquetaCamiseta) {
-        this.etiquetaCamiseta = etiquetaCamiseta;
+    public void setEtiqueta(String etiqueta) {
+        this.etiqueta = etiqueta;
     }
 
-    public int getStockCamiseta() {
-        return stockCamiseta;
+    public int getStock() {
+        return stock;
     }
 
-    public void setStockCamiseta(int stockCamiseta) {
-        this.stockCamiseta = stockCamiseta;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
-    
+
     
     
     
