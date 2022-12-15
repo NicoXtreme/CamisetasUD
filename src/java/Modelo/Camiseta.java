@@ -13,7 +13,7 @@ import java.io.InputStream;
 public class Camiseta {
     int idCamiseta;
     InputStream foto;
-    String nombre;
+    String nombreCamiseta;
     String descripcion;
     int precio = 0;
     String color;
@@ -24,16 +24,14 @@ public class Camiseta {
     public Camiseta() {
     }
 
-    public Camiseta(int idCamiseta, InputStream foto, String nombre, String descripcion, int precio, String color, String talla, String etiqueta, int stock) {
+    public Camiseta(int idCamiseta, InputStream foto, String nombreCamiseta, String descripcion, String color, String talla, String etiqueta) {
         this.idCamiseta = idCamiseta;
         this.foto = foto;
-        this.nombre = nombre;
+        this.nombreCamiseta = nombreCamiseta;
         this.descripcion = descripcion;
-        this.precio = precio;
         this.color = color;
         this.talla = talla;
         this.etiqueta = etiqueta;
-        this.stock = stock;
     }
 
     public int getIdCamiseta() {
@@ -52,12 +50,12 @@ public class Camiseta {
         this.foto = foto;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCamiseta() {
+        return nombreCamiseta;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCamiseta(String nombreCamiseta) {
+        this.nombreCamiseta = nombreCamiseta;
     }
 
     public String getDescripcion() {
@@ -108,8 +106,4 @@ public class Camiseta {
         this.stock = stock;
     }
 
-    
-    
-    
-    
 }

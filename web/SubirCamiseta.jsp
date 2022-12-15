@@ -50,44 +50,44 @@
             <div class="form-group"> <label for="form17">Stock</label> <input type="text" name="txtshirtstock" class="form-control" id="form17" placeholder="Stock"> </div>
             <div class="form-group"> <label for="form17">Color</label>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="color" value="cliente">Blanca <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="color" value="blanco">Blanca <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="color" value="cliente">Negra <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="color" value="negro">Negra <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="color" value="cliente">Amarilla <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="color" value="amarillo">Amarilla <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="color" value="cliente">Azul <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="color" value="azul">Azul <label class="form-check-label"></label>
               </div>
             </div>
             <div class="form-group"> <label for="form17">Talla</label>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="size" value="cliente">S <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="size" value="S">S <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="size" value="cliente">M <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="size" value="M">M <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="size" value="cliente">L <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="size" value="L">L <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="size" value="cliente">XL <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="size" value="XL">XL <label class="form-check-label"></label>
               </div>
             </div>
             <div class="form-group"> <label for="form17">Estilo</label>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="tag" value="cliente">Arte <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="tag" value="Arte">Arte <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="tag" value="cliente">Deportiva <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="tag" value="Deportiva">Deportiva <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="tag" value="cliente">Videojuegos <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="tag" value="Videojuegos">Videojuegos <label class="form-check-label"></label>
               </div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="tag" value="cliente">Superheroes <label class="form-check-label"></label>
+                <input type="radio" class="form-check-input" name="tag" value="Superheroes">Superheroes <label class="form-check-label"></label>
               </div>
             </div>
             <button type="submit" name="accion" value="Guardar" class="btn btn-primary">Guardar</button>

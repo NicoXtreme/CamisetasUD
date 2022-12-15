@@ -1,14 +1,13 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package Controlador;
 
-import Modelo.Camiseta;
 import ModeloDAO.CamisetaDAO;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,10 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author nicox
+ * @author NicoXtreme
  */
-public class Controlador extends HttpServlet {
-
+public class ControladorIMG extends HttpServlet {
+    
+    CamisetaDAO camdao = new CamisetaDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -29,23 +29,12 @@ public class Controlador extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    CamisetaDAO camdao = new CamisetaDAO();
-    List<Camiseta> camisetas = new ArrayList<>();
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
-            String accion = request.getParameter("accion");
-            camisetas = camdao.listar();
-            switch (accion) {
-                case "Principal":
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;       
-                default:
-                    request.setAttribute("camisetas", camisetas);
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                }
-            }
+        int idCamiseta = Integer.parseInt(request.getParameter("IdCamiseta"));
+        camdao.listarImg(idCamiseta, response);
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -57,8 +46,7 @@ public class Controlador extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws ServletException, IOException { 
     }
 
     /**
@@ -86,3 +74,4 @@ public class Controlador extends HttpServlet {
     }// </editor-fold>
 
 }
+

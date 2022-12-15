@@ -93,7 +93,7 @@ public class Guardar extends HttpServlet {
                 String etiqueta = request.getParameter("tag");
 
                 cam.setFoto(inputStream);
-                cam.setNombre(nombre);
+                cam.setNombreCamiseta(nombre);
                 cam.setDescripcion(descripcion);
                 cam.setPrecio(precio);
                 cam.setStock(stock);
