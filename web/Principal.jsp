@@ -28,7 +28,7 @@
           <b> CAMISETAS UD</b>
         </a>
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Inicio">INICIO</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Principal">INICIO</a> </li>
           <li class="nav-item"> <a class="nav-link" href="SubirCamiseta.jsp">SUBE TU CAMISETA</a> </li>
         </ul>
         <ul class="navbar-nav">
@@ -105,6 +105,9 @@
                   <div class="card">
                       <div class="card-header">
                           <label>${cam.getNombreCamiseta()}</label>
+                      </div>
+                      <div class="card-header">
+                          <label>${cam.getIdCamiseta()}</label>
                       </div>
                       <div class="card-body">
                           <i>$${cam.getPrecio()}</i>

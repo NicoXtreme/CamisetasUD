@@ -39,8 +39,9 @@ public class Controlador extends HttpServlet {
             camisetas = camdao.listar();
             switch (accion) {
                 case "Principal":
+                    request.setAttribute("camisetas", camisetas);
                     request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;       
+                    break;      
                 default:
                     request.setAttribute("camisetas", camisetas);
                     request.getRequestDispatcher("Principal.jsp").forward(request, response);

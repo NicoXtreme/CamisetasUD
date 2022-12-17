@@ -63,7 +63,7 @@ public class CamisetaDAO {
             ps = con.prepareStatement(comsql);
             rs = ps.executeQuery();
             if(rs.next()){
-                inputStream = rs.getBinaryStream("FotoCamiseta");
+                inputStream = rs.getBinaryStream("Foto");
             }
             bufferedInputStream = new BufferedInputStream(inputStream);
             bufferedOutputStream = new BufferedOutputStream(outputStream);

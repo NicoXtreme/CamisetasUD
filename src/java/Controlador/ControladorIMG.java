@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Camiseta;
 import ModeloDAO.CamisetaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,8 +32,6 @@ public class ControladorIMG extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int idCamiseta = Integer.parseInt(request.getParameter("IdCamiseta"));
-        camdao.listarImg(idCamiseta, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,6 +46,8 @@ public class ControladorIMG extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException { 
+        int idCamiseta = Integer.parseInt(request.getParameter("idCamiseta"));
+        camdao.listarImg(idCamiseta, response);
     }
 
     /**
