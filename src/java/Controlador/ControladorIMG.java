@@ -46,6 +46,7 @@ public class ControladorIMG extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException { 
+        //Listar Imagenes
         int idCamiseta = Integer.parseInt(request.getParameter("idCamiseta"));
         camdao.listarImg(idCamiseta, response);
     }
