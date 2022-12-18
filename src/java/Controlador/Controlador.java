@@ -5,6 +5,7 @@
 package Controlador;
 
 import Modelo.Camiseta;
+import Modelo.Carrito;
 import ModeloDAO.CamisetaDAO;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +31,16 @@ public class Controlador extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     CamisetaDAO camdao = new CamisetaDAO();
+    Camiseta cam = new Camiseta();
     List<Camiseta> camisetas = new ArrayList<>();
+    
+    List<Carrito> listaCarrito = new ArrayList<>();
+    int item;
+    double totalPagar = 0.0;
+    int cantidad = 1;
+    
+    int idcam;
+    Carrito car;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,10 +48,66 @@ public class Controlador extends HttpServlet {
             String accion = request.getParameter("accion");
             camisetas = camdao.listar();
             switch (accion) {
-                case "Principal":
-                    request.setAttribute("camisetas", camisetas);
-                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                    break;      
+                case "Comprar":
+                    totalPagar = 0;
+                    idcam = Integer.parseInt(request.getParameter("idCamiseta"));
+                    cam = camdao.listarId(idcam);
+                    item = item+1;
+                    car = new Carrito();
+                    car.setItem(item);
+                    car.setIdProducto(cam.getIdCamiseta());
+                    car.setNombres(cam.getNombreCamiseta());
+                    car.setDescripcion(cam.getDescripcion());
+                    car.setTallas(cam.getTalla());
+                    car.setPrecioCompra(cam.getPrecio());
+                    car.setCantidad(cantidad);
+                    car.setSubTotal(cantidad*cam.getPrecio());
+                    listaCarrito.add(car);
+                    for (int i = 0; i < listaCarrito.size(); i++) {
+                       totalPagar=totalPagar+listaCarrito.get(i).getSubTotal();
+                    }
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.setAttribute("carrito", listaCarrito);
+                    request.setAttribute("contador", listaCarrito.size());
+                    request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+                    break;
+                case "AgregarCarrito":
+                    idcam = Integer.parseInt(request.getParameter("idCamiseta"));
+                    cam = camdao.listarId(idcam);
+                    item = item+1;
+                    car = new Carrito();
+                    car.setItem(item);
+                    car.setIdProducto(cam.getIdCamiseta());
+                    car.setNombres(cam.getNombreCamiseta());
+                    car.setDescripcion(cam.getDescripcion());
+                    car.setTallas(cam.getTalla());
+                    car.setPrecioCompra(cam.getPrecio());
+                    car.setCantidad(cantidad);
+                    car.setSubTotal(cantidad*cam.getPrecio());
+                    listaCarrito.add(car);
+                    
+                    request.setAttribute("contador", listaCarrito.size());
+                    request.getRequestDispatcher("Controlador?accion=Inicio").forward(request, response);
+                    break;    
+                case "Delete":
+                    int idproducto=Integer.parseInt(request.getParameter("idp"));
+                    for (int i = 0; i <listaCarrito.size(); i++) {
+                        if(listaCarrito.get(i).getItem()==idproducto){
+                            listaCarrito.remove(i);
+                        }
+                    }
+
+                    request.getRequestDispatcher("controlador?accion=Carrito").forward(request, response);
+                    break;
+                case "Carrito":
+                    totalPagar = 0.0;
+                    request.setAttribute("carrito", listaCarrito);
+                    for (int i = 0; i < listaCarrito.size(); i++) {
+                       totalPagar=totalPagar+listaCarrito.get(i).getSubTotal();
+                    }
+                    request.setAttribute("totalPagar", totalPagar);
+                    request.getRequestDispatcher("Carrito.jsp").forward(request, response);
+                    break;
                 default:
                     request.setAttribute("camisetas", camisetas);
                     request.getRequestDispatcher("Principal.jsp").forward(request, response);

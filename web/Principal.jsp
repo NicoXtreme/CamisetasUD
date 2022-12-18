@@ -28,7 +28,7 @@
           <b> CAMISETAS UD</b>
         </a>
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Principal">INICIO</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Inicio">INICIO</a> </li>
           <li class="nav-item"> <a class="nav-link" href="SubirCamiseta.jsp">SUBE TU CAMISETA</a> </li>
         </ul>
         <ul class="navbar-nav">
@@ -44,7 +44,7 @@
         <b class="ml-2 mt-1">¡Bienvenido "Nombre Usuario" - Eres "Cliente o Artista"!</b>
       </a>
       <div class="row">
-        <div class="col-md-12"><a class="navbar-brand" href="#"><i class="fa d-inline fa-lg fa-bomb"></i>Tu carrito</a></div>
+          <div class="col-md-12"><a class="navbar-brand" href="Controlador?accion=Carrito"><i class="fa d-inline fa-lg fa-shopping-cart"><label style="color: orange">(${contador})</label></i>Tu carrito</a></div>
       </div>
     </div>
   </nav>
@@ -98,17 +98,18 @@
           </div>
         </div>
       </div>
-      <div class="container mt-2">
+      <div class="container mt-2 mb-4">
           <div class="row">
               <c:forEach var="cam" items="${camisetas}">
                   <div class="col-sm-4">
                   <div class="card">
                       <div class="card-header">
-                          <label>${cam.getNombreCamiseta()}</label>
+                          <label>${cam.getNombreCamiseta()} </label> ||
+                          <label>${cam.getTalla()}</label> ||
+                          <label>${cam.getColor()}</label> ||
+                          <label>${cam.getEtiqueta()}</label>
                       </div>
-                      <div class="card-header">
-                          <label>${cam.getIdCamiseta()}</label>
-                      </div>
+                      
                       <div class="card-body">
                           <i>$${cam.getPrecio()}</i>
                           <img src="ControladorIMG?idCamiseta=${cam.getIdCamiseta()}" width="200" height="180">
@@ -116,8 +117,8 @@
                       <div class="card-footer text-center">
                           <label>${cam.getDescripcion()}</label>
                           <div>
-                              <a href="" class="btn btn-outline-info">Agregar a Carrito</a>
-                              <a href="" class="btn btn-danger">Comprar</a>
+                              <a href="Controlador?accion=AgregarCarrito&idCamiseta=${cam.getIdCamiseta()}" class="btn btn-outline-info">Agregar a Carrito</a>
+                              <a href="Controlador?accion=Comprar&idCamiseta=${cam.getIdCamiseta()}" class="btn btn-danger">Comprar</a>
                           </div>
                       </div>
                     </div>              

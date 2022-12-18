@@ -4,10 +4,14 @@
  */
 package Controlador;
 
+import Modelo.Camiseta;
 import Modelo.Usuario;
+import ModeloDAO.CamisetaDAO;
 import ModeloDAO.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -72,6 +76,10 @@ public class Validar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    CamisetaDAO camdao = new CamisetaDAO();
+    List<Camiseta> camisetas = new ArrayList<>();
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -87,6 +95,8 @@ public class Validar extends HttpServlet {
             }else{
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
+            request.setAttribute("camisetas", camisetas);
+
         }
         else{
             request.getRequestDispatcher("index.jsp").forward(request, response);

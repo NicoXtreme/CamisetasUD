@@ -23,7 +23,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar14">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"> <a class="nav-link" href="Principal.jsp">Pagina Principal</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Inicio">Pagina Principal</a> </li>
           <li class="nav-item"> <a class="nav-link" href="SobreNosotros.jsp">Sobre Nosotros</a> </li>
         </ul>
         <p class="d-none d-md-block lead mb-0  text-white"> <i class="fa d-inline fa-lg fa-stop-circle"></i> <b>CAMISETAS UD</b></p>

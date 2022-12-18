@@ -27,6 +27,29 @@ public class CamisetaDAO {
     PreparedStatement ps;
     ResultSet rs;
     
+    public Camiseta listarId(int id){
+        String comsql = "SELECT * FROM camiseta WHERE IdCamiseta=" + id;
+        Camiseta cam = new Camiseta();
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(comsql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                cam.setIdCamiseta(rs.getInt(1));
+                cam.setNombreCamiseta(rs.getString(2));
+                cam.setDescripcion(rs.getString(3));
+                cam.setFoto(rs.getBinaryStream(4));
+                cam.setPrecio(rs.getDouble(5));
+                cam.setStock(rs.getInt(6));
+                cam.setColor(rs.getString(7));
+                cam.setTalla(rs.getString(8));
+                cam.setEtiqueta(rs.getString(9));
+            }
+        } catch (Exception e) {
+        }
+        return cam;
+    }
+    
     public List listar(){
         List<Camiseta>camisetas = new ArrayList();
         String comsql = "SELECT * FROM camiseta";
@@ -42,6 +65,9 @@ public class CamisetaDAO {
                 cam.setDescripcion(rs.getString(4));
                 cam.setPrecio(rs.getInt(5));
                 cam.setStock(rs.getInt(6));
+                cam.setColor(rs.getString(7));
+                cam.setTalla(rs.getString(8));
+                cam.setEtiqueta(rs.getString(9));
                 
                 camisetas.add(cam);
             }
@@ -56,7 +82,7 @@ public class CamisetaDAO {
         OutputStream outputStream = null;
         BufferedInputStream bufferedInputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
-        response.setContentType("image/*");
+        
         try {
             outputStream = response.getOutputStream();
             con = cn.Conexion();
@@ -83,7 +109,7 @@ public class CamisetaDAO {
             ps.setBlob(1, cam.getFoto());
             ps.setString(2, cam.getNombreCamiseta());
             ps.setString(3, cam.getDescripcion());
-            ps.setInt(4, cam.getPrecio());
+            ps.setDouble(4, cam.getPrecio());
             ps.setInt(5, cam.getStock());
             ps.setString(6, cam.getColor());
             ps.setString(7, cam.getTalla());

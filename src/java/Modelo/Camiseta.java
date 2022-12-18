@@ -15,7 +15,7 @@ public class Camiseta {
     InputStream foto;
     String nombreCamiseta;
     String descripcion;
-    int precio = 0;
+    double precio = 0;
     String color;
     String talla;
     String etiqueta;
@@ -66,11 +66,11 @@ public class Camiseta {
         this.descripcion = descripcion;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
@@ -105,5 +105,7 @@ public class Camiseta {
     public void setStock(int stock) {
         this.stock = stock;
     }
-
+    
+    
+    
 }

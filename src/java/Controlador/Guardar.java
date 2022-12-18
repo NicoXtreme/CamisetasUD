@@ -86,7 +86,7 @@ public class Guardar extends HttpServlet {
                 InputStream inputStream = part.getInputStream();
                 String nombre = request.getParameter("txtshirtname");
                 String descripcion = request.getParameter("txtshirtdesc");
-                int precio = Integer.parseInt(request.getParameter("txtshirtprice"));
+                double precio = Double.parseDouble(request.getParameter("txtshirtprice"));
                 int stock = Integer.parseInt(request.getParameter("txtshirtstock"));
                 String color = request.getParameter("color");
                 String talla = request.getParameter("size");
