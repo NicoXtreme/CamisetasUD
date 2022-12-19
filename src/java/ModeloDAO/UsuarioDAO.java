@@ -26,8 +26,14 @@ public class UsuarioDAO {
             ps.setString(2, password);
             rs = ps.executeQuery();
             while(rs.next()){
-                usr.setCorreo(rs.getString("CorreoUsuario"));
+usr.setCorreo(rs.getString("CorreoUsuario"));
                 usr.setContraseña(rs.getString("ContrasenaUsuario"));
+                usr.setApodo(rs.getString("ApodoUsuario"));
+                usr.setApellido(rs.getString("ApellidosUsuario"));
+                usr.setCedula(rs.getString("CedulaUsuario"));
+                usr.setId(rs.getInt("IdUsuario"));
+                usr.setNombre(rs.getString("NombresUsuario"));
+                usr.setTipo(rs.getString("TipoUsuario"));
             }
         } catch (Exception e) {
         }

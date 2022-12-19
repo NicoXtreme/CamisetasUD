@@ -19,29 +19,49 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar12">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar12"> <a class="navbar-brand d-none d-md-block" href="#">
+
+  <!-- NUEVA BARRA DE OPCIONES DE RUBRICAS O MENÚS -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="Controlador?accion=Inicio">Inicio </a>
+      </li>
+      <li class="nav-item">
+        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="SubirCamiseta.jsp">Sube tu camiseta</a>
+      </li>
+       <li class="nav-item">
+        <a style="margin-left: 10px; border: none" class="btn btn-outline-light" href="index.jsp">Para iniciar sesión</a>
+       </li>
+    </ul>
+      <!-- BOTON DE CERRAR SESIÓN -->
+        <div class="dropdown">
+            
+            <button style="border: none" class="btn btn-outline-light secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ${user.getApodo()}
+            </button>
+            <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">
+                    <img src="https://cdn.icon-icons.com/icons2/2483/PNG/512/user_icon_149851.png" alt="60" width="60">
+                </a>
+                <a class="dropdown-item" href="#">${user.getApodo()}</a>
+                <a class="dropdown-item" href="#">${user.getCorreo()}</a>
+                <div class="dropdown-divider"></div>
+                <form accion="Validar" method="POST">
+                    <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>                    
+                </form>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar12"> <a class="navbar-brand d-none d-md-block" href="#">
           <i class="fa d-inline fa-lg fa-circle"></i>
           <b> CAMISETAS UD</b>
         </a>
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="Controlador?accion=Inicio">INICIO</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="SubirCamiseta.jsp">SUBE TU CAMISETA</a> </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="index.jsp">Iniciar Sesión</a> </li>
-          <li class="nav-item text-light"> <a class="nav-link text-light" href="Register.jsp">Registrate</a> </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  </div>
+</nav>
   <nav class="navbar navbar-dark bg-primary">
     <div class="container"> <a class="navbar-brand d-flex" href="#">
         <i class="fa d-inline fa-circle fa-2x"></i>
-        <b class="ml-2 mt-1">¡Bienvenido "Nombre Usuario" - Eres "Cliente o Artista"!</b>
+        <b class="ml-2 mt-1">¡Le damos la bienvenida a ${user.getApodo()} nuestro ${user.getTipo()} favorito!</b>
       </a>
       <div class="row">
           <div class="col-md-12"><a class="navbar-brand" href="Controlador?accion=Carrito"><i class="fa d-inline fa-lg fa-shopping-cart"><label style="color: orange">(${contador})</label></i>Tu carrito</a></div>
